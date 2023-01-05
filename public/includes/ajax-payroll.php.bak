@@ -1,0 +1,53 @@
+<?php
+$table = 'payslips';
+
+// Table's primary key
+$primaryKey = 'id';
+
+$columns = array(
+	array( 'db' => 'id', 'dt' => 0 ),
+	array( 'db' => 'date_start', 'dt' => 1 ),
+	array( 'db' => 'date_end', 'dt' => 2 ),
+	array( 'db' => 'emp_id', 'dt' => 3 ),
+	array( 'db' => 'b_sal', 'dt' => 4 ),
+	array( 'db' => 'bi_sal', 'dt' => 5 ),
+	array( 'db' => 'd_sal', 'dt' => 6 ),
+	array( 'db' => 'dp', 'dt' => 7 ),
+	array( 'db' => 'dpsh', 'dt' => 8 ),
+	array( 'db' => 'dprh', 'dt' => 9 ),
+	array( 'db' => 'b_total', 'dt' => 10 ),
+	array( 'db' => 'oth', 'dt' => 11 ),
+	array( 'db' => 'otv', 'dt' => 12 ),
+	array( 'db' => 'allowance', 'dt' => 13 ),
+	array( 'db' => 'cola', 'dt' => 14 ),
+	array( 'db' => 'tmb', 'dt' => 15 ),
+	array( 'db' => 'uth', 'dt' => 16 ),
+	array( 'db' => 'utv', 'dt' => 17 ),
+	array( 'db' => 'late_m', 'dt' => 18 ),
+	array( 'db' => 'late_v', 'dt' => 19 ),
+	array( 'db' => 'tax', 'dt' => 20 ),
+	array( 'db' => 'sss_p', 'dt' => 21 ),
+	array( 'db' => 'sss_l', 'dt' => 22 ),
+	array( 'db' => 'mdmf_p', 'dt' => 23 ),
+	array( 'db' => 'mdmf_l', 'dt' => 24 ),
+	array( 'db' => 'mdmf_h', 'dt' => 25 ),
+	array( 'db' => 'mdmf_t', 'dt' => 26 ),
+	array( 'db' => 'phic', 'dt' => 27 ),
+	array( 'db' => 'total', 'dt' => 28 )
+);
+
+// SQL server connection information
+$sql_details = array(
+	'user' => 'user',
+	'pass' => 'pass',
+	'db'   => 'payrolldb',
+	'host' => 'localhost'
+);
+
+require( 'ssp.class.php' );
+
+echo json_encode(
+	SSP::simple( $_GET, $sql_details, $table, $primaryKey, $columns )
+);
+
+
